@@ -77,74 +77,8 @@ const modalBody = document.getElementById('modalBody');
 const modalClose = document.querySelector('.modal-close');
 const modalOverlay = document.querySelector('.modal-overlay');
 
-const projectData = {
-    aiwave: {
-        title: 'AIWave',
-        subtitle: '🏆 台灣生成式 AI 應用黑客松',
-        description: '整合 AWS 雲端服務與 AI 技術，打造邊緣倉儲的即時數據分析系統',
-        fullDescription: `
-            <p class="mb-4">AIWave 是一個創新的雲端 AI 解決方案，專為邊緣倉儲設計。這個專案在台灣生成式 AI 應用黑客松中展示了如何運用 AWS 服務構建高效、安全的數據分析工作流。</p>
-            <h3 class="text-xl font-bold text-white mb-3 mt-6">核心功能</h3>
-            <ul class="space-y-2 mb-4">
-                <li>• 即時數據收集與處理</li>
-                <li>• AI 驅動的數據分析與預測</li>
-                <li>• 安全的雲端儲存架構</li>
-                <li>• 直觀的數據視覺化介面</li>
-            </ul>
-            <h3 class="text-xl font-bold text-white mb-3 mt-6">技術亮點</h3>
-            <ul class="space-y-2 mb-4">
-                <li>• 使用 AWS Lambda 實現無伺服器架構</li>
-                <li>• 整合 AWS Bedrock 提供 AI 能力</li>
-                <li>• DynamoDB 確保數據快速存取</li>
-                <li>• API Gateway 實現安全的 API 管理</li>
-            </ul>
-        `,
-        video: 'assets/projects/aiwave/web-demo.mp4',
-        images: [],
-        tags: ['AWS', 'Generative AI', 'Full Stack', 'AWS Lambda', 'DynamoDB'],
-        links: {
-            github: 'https://github.com/yChiNL/AI-powered-edge-cloud-warehouse',
-            demo: ''
-        }
-    },
-    paperassist: {
-        title: 'PaperAssist',
-        subtitle: '📚 學術研究 RAG 聊天機器人',
-        description: '結合 RAG 架構與 LLM，打造專業的學術論文查詢助手',
-        fullDescription: `
-            <p class="mb-4">PaperAssist 是一個專為學術研究設計的智能聊天機器人，採用先進的 RAG（Retrieval-Augmented Generation）架構，能夠準確理解和回答學術相關問題。</p>
-            <h3 class="text-xl font-bold text-white mb-3 mt-6">核心技術</h3>
-            <ul class="space-y-2 mb-4">
-                <li>• RAG 架構整合 LLM 與外部知識庫</li>
-                <li>• 多模型混合檢索策略</li>
-                <li>• 向量資料庫實現語義搜索</li>
-                <li>• 優化的 Chunking 策略提升檢索品質</li>
-            </ul>
-            <h3 class="text-xl font-bold text-white mb-4 mt-6">技術挑戰與解決方案</h3>
-            <div class="space-y-4 mb-4">
-                <div class="bg-slate-800/50 p-4 rounded-lg border-l-4 border-blue-500">
-                    <p class="text-blue-400 font-semibold mb-2">💡 挑戰：如何提升檢索的準確性</p>
-                    <p class="text-slate-300 ml-4">實驗不同的 Embedding 模型，找出最適合學術領域的方案</p>
-                </div>
-                <div class="bg-slate-800/50 p-4 rounded-lg border-l-4 border-purple-500">
-                    <p class="text-purple-400 font-semibold mb-2">💡 挑戰：長文本的處理</p>
-                    <p class="text-slate-300 ml-4">設計智能的 Chunking 策略，保留文本語義完整性</p>
-                </div>
-                <div class="bg-slate-800/50 p-4 rounded-lg border-l-4 border-green-500">
-                    <p class="text-green-400 font-semibold mb-2">💡 挑戰：平衡召回率與精確度</p>
-                    <p class="text-slate-300 ml-4">採用混合檢索策略，結合關鍵字與語義搜索</p>
-                </div>
-            </div>
-        `,
-        video: '',
-        images: ['assets/projects/paperassist/RAGChatBot-1.png'],
-        tags: ['Python', 'RAG', 'LLM', 'VectorDB', 'NLP'],
-        links: {
-            github: 'https://github.com/yChiNL/rag_chatbot',
-            demo: ''
-        }
-    }
-};
+// 透過 assets/js/projects.js 載入資料，避免本地開啟時的 CORS 錯誤
+const projectData = typeof PROJECT_DATA !== 'undefined' ? PROJECT_DATA : {};
 
 function openModal(projectId) {
     const project = projectData[projectId];
