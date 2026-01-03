@@ -4,93 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YEN-CHIN LEE | Portfolio</title>
+    
+    <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .gradient-text { background: linear-gradient(135deg, #60a5fa 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .skill-card:hover { transform: translateY(-5px); transition: all 0.3s ease; background: rgba(255, 255, 255, 0.08); }
-        .project-tag { font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(96, 165, 250, 0.1); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.2); }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body class="bg-[#0f172a] text-slate-200 leading-relaxed antialiased">
-
-    <!-- 導覽列 -->
     <nav class="fixed top-0 w-full z-50 glass px-6 py-4">
         <div class="max-w-6xl mx-auto flex justify-between items-center">
-            <span class="text-xl font-bold gradient-text tracking-tighter">YEN-CHIN LEE</span>
-            <div class="space-x-6 text-sm font-medium hidden md:flex">
-                <a href="#about" class="hover:text-blue-400 transition">關於我</a>
-                <a href="#experience" class="hover:text-blue-400 transition">實習經歷</a>
-                <a href="#projects" class="hover:text-blue-400 transition">專案作品</a>
-                <a href="#education" class="hover:text-blue-400 transition">學歷背景</a>
-                <a href="#skills" class="hover:text-blue-400 transition">技術棧</a>
+            <a href="#" class="text-xl font-bold gradient-text tracking-tight">YEN-CHIN</a>
+            <div id="navMenu" class="space-x-6 text-sm font-medium hidden md:flex">
+                <a href="#about" class="nav-link hover:text-blue-400 transition">關於我</a>
+                <a href="#experience" class="nav-link hover:text-blue-400 transition">工作經歷</a>
+                <a href="#projects" class="nav-link hover:text-blue-400 transition">專案作品</a>
+                <a href="#education" class="nav-link hover:text-blue-400 transition">學歷背景</a>
+                <a href="#skills" class="nav-link hover:text-blue-400 transition">技術棧</a>
+            </div>
+            
+            <button id="mobileMenuBtn" class="md:hidden text-white focus:outline-none" aria-label="開啟選單">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
+        </div>
+        <div id="mobileMenu" class="mobile-menu md:hidden mt-4">
+            <div class="flex flex-col space-y-4 text-sm font-medium pb-4">
+                <a href="#about" class="nav-link hover:text-blue-400 transition">關於我</a>
+                <a href="#experience" class="nav-link hover:text-blue-400 transition">工作經歷</a>
+                <a href="#projects" class="nav-link hover:text-blue-400 transition">專案作品</a>
+                <a href="#education" class="nav-link hover:text-blue-400 transition">學歷背景</a>
+                <a href="#skills" class="nav-link hover:text-blue-400 transition">技術棧</a>
             </div>
         </div>
     </nav>
-
-    <!-- 主視覺區塊 (Hero Section) -->
     <header id="about" class="min-h-screen flex items-center justify-center px-6 pt-20">
         <div class="max-w-4xl text-center">
-            <div class="inline-block px-4 py-1.5 mb-6 glass rounded-full text-xs font-medium text-blue-400 border border-blue-500/20">
-                電腦科學碩士 / 軟體工程師
-            </div>
-            <h1 class="text-6xl md:text-8xl font-extrabold mb-6 tracking-tight">
-                <span class="gradient-text">YEN-CHIN LEE</span>
+            <h1 class="text-5xl md:text-8xl font-extrabold mb-8 tracking-tight fade-in">
+                <span class="gradient-text block text-4xl md:text-6xl mb-3 tracking-widest">李彥槿</span>
+                <span class="gradient-text block text-5xl md:text-7xl">YEN-CHIN LEE</span>
             </h1>
-            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
-                具備卓越的問題解決與團隊領導能力，熱衷於應用 AI 技術優化系統營運。
-                擅長將複雜需求轉化為可執行的技術步驟，曾於實習期間帶領團隊縮短 30% 開發週期。
+            <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed fade-in">
+                具備卓越的問題解決與團隊領導能力，熱衷於應用技術支援高效系統營運<br>
+                擅長將技術需求轉化為可執行步驟，提供可靠的技術支援並清晰溝通<br>
+                挑戰解決複雜問題，為團隊績效與協作帶來可衡量的改善
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="mailto:sam6697@gmail.com" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full font-semibold transition flex items-center gap-2">
-                    <i data-lucide="mail" class="w-5 h-5"></i> 聯繫我
-                </a>
-                <a href="#" class="glass hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 border border-slate-700">
+            <div class="flex flex-wrap justify-center gap-4 fade-in">
+                <a href="https://www.linkedin.com/in/yenchinlee/" target="_blank" rel="noopener noreferrer" class="glass hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 border border-slate-700">
                     <i data-lucide="linkedin" class="w-5 h-5"></i> LinkedIn
                 </a>
-                <a href="https://github.com" target="_blank" class="glass hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 border border-slate-700">
+                <a href="https://github.com/yChiNL" target="_blank" rel="noopener noreferrer" class="glass hover:bg-white/10 px-8 py-3 rounded-full font-semibold transition flex items-center gap-2 border border-slate-700">
                     <i data-lucide="github" class="w-5 h-5"></i> GitHub
                 </a>
             </div>
         </div>
     </header>
 
-    <!-- 工作經歷 (Professional Experience) -->
     <section id="experience" class="py-24 px-6 bg-[#1e293b]/30">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4">
-                <span class="w-12 h-px bg-blue-500"></span> 專業經歷
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 flex items-center justify-center gap-4">
+                <span class="w-12 h-px bg-blue-500"></span> 工作經歷 <span class="w-12 h-px bg-blue-500"></span>
             </h2>
             <div class="relative pl-8 border-l border-slate-700">
                 <!-- MAYO -->
                 <div class="mb-16 relative">
                     <div class="absolute -left-[41px] top-0 w-5 h-5 bg-blue-500 rounded-full border-4 border-[#0f172a]"></div>
-                    <div class="flex flex-wrap justify-between items-start mb-4">
+                    <div class="flex flex-wrap justify-between items-start mb-4 gap-2">
                         <div>
-                            <h3 class="text-2xl font-bold text-white">MAYO Human Capital Inc.</h3>
+                            <h3 class="text-xl md:text-2xl font-bold text-white">MAYO Human Capital Inc.</h3>
                             <p class="text-blue-400 font-medium">Software Engineer Intern</p>
                         </div>
                         <span class="text-sm font-mono text-slate-500 bg-slate-800/50 px-3 py-1 rounded">2024.02 — 2025.03</span>
                     </div>
                     <div class="space-y-4 text-slate-400">
                         <div class="flex gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i>
-                            <p>開發 AI 驅動的 <span class="text-slate-200">RAG 知識系統</span>，整合 Azure OpenAI 與 VectorDB。</p>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5"></i>
+                            <p>開發 AI 驅動的 <span class="text-slate-200 font-semibold">RAG 知識系統</span>，整合 Azure OpenAI 與 VectorDB。</p>
                         </div>
                         <div class="flex gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i>
-                            <p>負責 <span class="text-slate-200">Azure DevOps CI/CD</span> 流程，自動化部署至 Windows IIS 及 Docker 環境。</p>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5"></i>
+                            <p>使用 <span class="text-slate-200 font-semibold">Azure DevOps CI/CD</span> 流程，自動化部署至 Windows IIS 及 Docker 環境。</p>
                         </div>
                         <div class="flex gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i>
-                            <p>導入 <span class="text-slate-200">Scrum 敏捷開發</span> 帶領 3-5 人團隊，成功降低 30% 開發時間，並使用 Jira 優化任務追蹤。</p>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5"></i>
+                            <p>與 3-5 位實習生協作，使用 <span class="text-slate-200 font-semibold">Scrum</span> 流程使開發時間縮短 30%，並提升對內部客戶需求的響應能力。</p>
                         </div>
                         <div class="flex gap-3">
-                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0"></i>
-                            <p>協助解決逾 100 件複雜技術報修單，顯著提升系統營運穩定度與用戶滿意度。</p>
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5"></i>
+                            <p>將任務追蹤遷移至 <span class="text-slate-200 font-semibold">Jira</span>，簡化團隊成員的工作流程。</p>
+                        </div>
+                        <div class="flex gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-blue-500 shrink-0 mt-0.5"></i>
+                            <p>解決超過 100 個複雜技術問題，提升系統營運穩定性並增加用戶滿意度。</p>
                         </div>
                     </div>
                 </div>
@@ -98,27 +102,28 @@
         </div>
     </section>
 
-    <!-- 專案與競賽 (Projects & Competition) -->
     <section id="projects" class="py-24 px-6">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4">
-                <span class="w-12 h-px bg-purple-500"></span> 專案與競賽
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 flex items-center justify-center gap-4">
+                <span class="w-12 h-px bg-purple-500"></span> 專案作品集 <span class="w-12 h-px bg-purple-500"></span>
             </h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- AIWave -->
-                <div class="glass p-8 rounded-3xl border border-white/5 hover:border-purple-500/30 transition-all group">
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="project-item project-card glass p-8 rounded-3xl border border-white/5 hover:border-purple-500/30" data-category="ai cloud fullstack">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-purple-500/10 rounded-2xl text-purple-400">
-                            <i data-lucide="trophy" class="w-6 h-6"></i>
+                            <i data-lucide="trophy" class="w-7 h-7"></i>
                         </div>
-                        <a href="#" class="text-slate-500 hover:text-white transition"><i data-lucide="github" class="w-6 h-6"></i></a>
+                        <a href="https://github.com/yChiNL/AI-powered-edge-cloud-warehouse" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white transition" aria-label="查看 GitHub 專案">
+                            <i data-lucide="github" class="w-6 h-6"></i>
+                        </a>
                     </div>
                     <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-purple-400 transition">AIWave</h3>
-                    <p class="text-sm text-purple-400 mb-4 font-medium italic">台灣生成式 AI 應用黑客松</p>
+                    <p class="text-sm text-purple-400 mb-4 font-medium italic">🏆 台灣生成式 AI 應用黑客松</p>
                     <ul class="text-slate-400 text-sm space-y-2 mb-6">
-                        <li>• 將客戶需求轉化為技術規格，設計雲端 AI 即時數據分析工作流。</li>
-                        <li>• 建立全端 PoC 系統，驗證高速且安全的數據存取架構。</li>
-                        <li>• 負責商業策略簡報，向企業客戶展示解決方案之戰略價值。</li>
+                        <li class="flex gap-2"><span class="text-purple-400">•</span> 將客戶需求轉化為可執行的技術規格，設計雲端 AI 即時數據分析工作流。</li>
+                        <li class="flex gap-2"><span class="text-purple-400">•</span> 建立概念驗證的雲端前後端系統，展示快速且安全的數據存取，驗證解決方案的可行性。</li>
+                        <li class="flex gap-2"><span class="text-purple-400">•</span> 向企業客戶展示解決方案的戰略價值，加速理解。</li>
                     </ul>
                     <div class="flex flex-wrap gap-2">
                         <span class="project-tag">Azure</span>
@@ -127,20 +132,21 @@
                     </div>
                 </div>
 
-                <!-- PaperAssist -->
-                <div class="glass p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 transition-all group">
+                <div class="project-item project-card glass p-8 rounded-3xl border border-white/5 hover:border-blue-500/30" data-category="ai">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-blue-500/10 rounded-2xl text-blue-400">
-                            <i data-lucide="bot" class="w-6 h-6"></i>
+                            <i data-lucide="bot" class="w-7 h-7"></i>
                         </div>
-                        <a href="#" class="text-slate-500 hover:text-white transition"><i data-lucide="github" class="w-6 h-6"></i></a>
+                        <a href="https://github.com/yChiNL/rag_chatbot" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-white transition" aria-label="查看 GitHub 專案">
+                            <i data-lucide="github" class="w-6 h-6"></i>
+                        </a>
                     </div>
                     <h3 class="text-2xl font-bold mb-3 text-white group-hover:text-blue-400 transition">PaperAssist</h3>
-                    <p class="text-sm text-blue-400 mb-4 font-medium italic">學術研究 RAG 聊天機器人</p>
+                    <p class="text-sm text-blue-400 mb-4 font-medium italic">📚 學術研究 RAG 聊天機器人</p>
                     <ul class="text-slate-400 text-sm space-y-2 mb-6">
-                        <li>• 實作 RAG 架構，整合 LLM 與外部知識庫以提升問答精準度。</li>
-                        <li>• 採用多模型混合檢索策略（Hybrid Retrieval），最大化資訊召回率。</li>
-                        <li>• 實驗多種 Embedding 模型與 Chunking 策略，優化學域知識檢索品質。</li>
+                        <li class="flex gap-2"><span class="text-blue-400">•</span> 應用並實作 RAG 架構，整合 LLM 與外部知識庫以提升問答準確性與相關性。</li>
+                        <li class="flex gap-2"><span class="text-blue-400">•</span> 實作多模型混合檢索策略，最大化資訊召回率與精確度。</li>
+                        <li class="flex gap-2"><span class="text-blue-400">•</span> 透過實驗各種 Embedding 模型和 Chunking 策略，優化特定領域知識的檢索與生成品質。</li>
                     </ul>
                     <div class="flex flex-wrap gap-2">
                         <span class="project-tag">Python</span>
@@ -153,101 +159,111 @@
         </div>
     </section>
 
-    <!-- 學歷 (Education) -->
     <section id="education" class="py-24 px-6 bg-[#1e293b]/30">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold mb-16 flex items-center gap-4 text-center justify-center">
-                學歷背景
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 flex items-center justify-center gap-4">
+                <span class="w-12 h-px bg-green-500"></span> 學歷背景 <span class="w-12 h-px bg-green-500"></span>
             </h2>
-            <div class="space-y-8">
-                <div class="glass p-8 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400">
-                            <i data-lucide="graduation-cap"></i>
+            <div class="space-y-6">
+                <div class="glass p-6 md:p-8 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:bg-white/5 transition">
+                    <div class="flex items-start md:items-center gap-4 flex-col md:flex-row w-full md:w-auto">
+                        <div class="w-12 h-12 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-400 shrink-0">
+                            <i data-lucide="graduation-cap" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-white">台北市立大學 (University of Taipei)</h4>
-                            <p class="text-slate-400">資訊科學系 碩士班</p>
+                            <h4 class="text-lg md:text-xl font-bold text-white">台北市立大學 (University of Taipei)</h4>
+                            <p class="text-slate-400 text-sm md:text-base">資訊工程學系 碩士</p>
                         </div>
                     </div>
-                    <span class="text-blue-400 font-mono">2024 — Present</span>
+                    <span class="text-blue-400 font-mono text-sm md:text-base">2024 — 現在（肄業）</span>
                 </div>
-                <div class="glass p-8 rounded-2xl flex flex-col md:flex-row justify-between items-center gap-4">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-slate-500/10 rounded-full flex items-center justify-center text-slate-400">
-                            <i data-lucide="school"></i>
+                <div class="glass p-6 md:p-8 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 hover:bg-white/5 transition">
+                    <div class="flex items-start md:items-center gap-4 flex-col md:flex-row w-full md:w-auto">
+                        <div class="w-12 h-12 bg-slate-500/10 rounded-full flex items-center justify-center text-slate-400 shrink-0">
+                            <i data-lucide="school" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <h4 class="text-xl font-bold text-white">銘傳大學 (Ming Chuan University)</h4>
-                            <p class="text-slate-400">資訊管理學系 學士</p>
+                            <h4 class="text-lg md:text-xl font-bold text-white">銘傳大學 (Ming Chuan University)</h4>
+                            <p class="text-slate-400 text-sm md:text-base">資訊管理學系 學士</p>
                         </div>
                     </div>
-                    <span class="text-slate-500 font-mono">2020 — 2024</span>
+                    <span class="text-slate-500 font-mono text-sm md:text-base">2020 — 2024</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 技術技能 (Detailed Skills) -->
     <section id="skills" class="py-24 px-6">
-        <div class="max-w-5xl mx-auto">
-            <h2 class="text-3xl font-bold mb-16 text-center">技術棧與專業概念</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Cloud & Backend -->
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 flex items-center justify-center gap-4">
+                <span class="w-12 h-px bg-amber-500"></span> 技術棧與專業概念 <span class="w-12 h-px bg-amber-500"></span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="space-y-6">
                     <h3 class="text-lg font-semibold text-blue-400 flex items-center gap-2">
-                        <i data-lucide="cloud" class="w-5 h-5"></i> 雲端與後端
+                        <i data-lucide="cloud" class="w-5 h-5"></i> 雲端平台
                     </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">Azure (VM, App Service)</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">Azure DevOps</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">AWS</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">.NET Core / Framework</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">MSSQL</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">Flask / Django</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Azure DevOps</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Azure VM</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Azure Storage</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Azure App Service</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">AWS</span>
                     </div>
                 </div>
-                <!-- Programming -->
+                <div class="space-y-6">
+                    <h3 class="text-lg font-semibold text-cyan-400 flex items-center gap-2">
+                        <i data-lucide="server" class="w-5 h-5"></i> 後端技術
+                    </h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">.NET Core</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">.NET Framework</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">MSSQL</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Flask</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Django</span>
+                    </div>
+                </div>
                 <div class="space-y-6">
                     <h3 class="text-lg font-semibold text-purple-400 flex items-center gap-2">
                         <i data-lucide="terminal" class="w-5 h-5"></i> 程式語言
                     </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm font-bold text-white">C#</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm font-bold text-white">Python</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">JavaScript / jQuery</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">JavaScript</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">jQuery</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">C#</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Python</span>
                     </div>
                 </div>
-                <!-- Methodology -->
                 <div class="space-y-6">
                     <h3 class="text-lg font-semibold text-green-400 flex items-center gap-2">
                         <i data-lucide="layers" class="w-5 h-5"></i> 開發方法論
                     </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">Scrum</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">Git Flow</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">TDD / BDD</span>
-                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm">OOP</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Scrum</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">TDD/BDD</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">OOP</span>
+                        <span class="skill-card px-4 py-2 rounded-lg border border-white/5 text-sm cursor-pointer">Git Flow</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 頁尾 -->
     <footer class="py-20 border-t border-slate-800 text-center">
-        <p class="text-slate-500 text-sm mb-4">本網頁根據個人最新履歷製作</p>
-        <div class="flex justify-center gap-6 text-slate-400">
-            <a href="mailto:sam6697@gmail.com" class="hover:text-blue-400 transition">Email</a>
-            <a href="#" class="hover:text-blue-400 transition">LinkedIn</a>
-            <a href="#" class="hover:text-blue-400 transition">GitHub</a>
+        <div class="flex justify-center gap-6 text-slate-400 mb-8">
+            <a href="mailto:sam6697@gmail.com" class="hover:text-blue-400 transition" aria-label="發送郵件">Email</a>
+            <a href="https://www.linkedin.com/in/yenchinlee/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition" aria-label="查看 LinkedIn">LinkedIn</a>
+            <a href="https://github.com/yChiNL" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition" aria-label="查看 GitHub">GitHub</a>
         </div>
-        <p class="mt-8 text-xs text-slate-600">&copy; 2025 YEN-CHIN LEE. All Rights Reserved.</p>
+        <p class="text-xs text-slate-600">&copy; 2025 YEN-CHIN LEE. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // 初始化 Lucide 圖標
-        lucide.createIcons();
-    </script>
+    <button id="backToTop" 
+            class="bg-blue-600 hover:bg-blue-700 text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg transition"
+            aria-label="返回頂部">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>
