@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YEN-CHIN LEE | Portfolio</title>
     
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -109,7 +109,7 @@
             </h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-                <div class="project-item project-card glass p-8 rounded-3xl border border-white/5 hover:border-purple-500/30" data-category="ai cloud fullstack">
+                <div class="project-item project-card glass p-8 rounded-3xl border border-white/5 hover:border-purple-500/30 cursor-pointer" data-project="aiwave" data-category="ai cloud fullstack">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-purple-500/10 rounded-2xl text-purple-400">
                             <i data-lucide="trophy" class="w-7 h-7"></i>
@@ -132,7 +132,7 @@
                     </div>
                 </div>
 
-                <div class="project-item project-card glass p-8 rounded-3xl border border-white/5 hover:border-blue-500/30" data-category="ai">
+                <div class="project-item project-card glass p-8 rounded-3xl border border-white/5 hover:border-blue-500/30 cursor-pointer" data-project="paperassist" data-category="ai">
                     <div class="flex justify-between items-start mb-6">
                         <div class="p-3 bg-blue-500/10 rounded-2xl text-blue-400">
                             <i data-lucide="bot" class="w-7 h-7"></i>
@@ -248,6 +248,17 @@
             </div>
         </div>
     </section>
+    
+    <div id="projectModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content glass">
+            <button class="modal-close" aria-label="關閉">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modalBody" class="modal-body">
+            </div>
+        </div>
+    </div>
 
     <footer class="py-20 border-t border-slate-800 text-center">
         <div class="flex justify-center gap-6 text-slate-400 mb-8">
@@ -264,6 +275,6 @@
         <i data-lucide="arrow-up" class="w-5 h-5"></i>
     </button>
 
-    <script src="script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
