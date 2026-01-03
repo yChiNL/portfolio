@@ -111,7 +111,8 @@ function openModal(projectId) {
                     <video id="video-${projectId}" width="100%" height="100%" controls preload="metadata" 
                         class="rounded-xl" 
                         poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect fill='%231e293b' width='800' height='450'/%3E%3C/svg%3E"
-                        oncanplaythrough="document.getElementById('videoLoader-${projectId}').classList.add('hidden')">
+                        onloadedmetadata="document.getElementById('videoLoader-${projectId}').classList.add('hidden')"
+                        oncanplay="document.getElementById('videoLoader-${projectId}').classList.add('hidden')">
                         <source src="${project.video}" type="video/mp4">
                         您的瀏覽器不支援影片播放。
                     </video>
