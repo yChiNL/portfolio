@@ -1,4 +1,77 @@
 const PROJECT_DATA = {
+    "bpm-knowledge": {
+        "title": "BPM Knowledge System",
+        "subtitle": "🧠 智慧型表單開發知識庫",
+        "description": "整合 RAG 技術與 Azure OpenAI，打造專屬企業內部的智慧知識管理系統",
+        "fullDescription": `
+            <p class="text-slate-300 leading-relaxed mb-8">
+                BPM Knowledge System 是一個專為企業內部開發的智慧知識庫系統。此專案整合了 RAG (Retrieval-Augmented Generation) 技術與 Azure OpenAI 服務，解決了表單開發過程中資訊分散與查詢不易的痛點，協助顧問、開發人員及使用者快速查找開發指南與常見問題。
+            </p>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-lucide="cpu" class="w-5 h-5 text-indigo-400"></i> 核心功能
+                </h3>
+                <ul class="space-y-3 text-slate-300">
+                    <li class="flex gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-indigo-500 shrink-0"></i>
+                        <span><strong>RAG 智慧檢索</strong>：結合向量搜尋與 GPT-4o 模型，提供精準的技術問答與程式碼範例。</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-indigo-500 shrink-0"></i>
+                        <span><strong>Cloud-Native 架構</strong>：採用 Azure Blob Storage 儲存動態資料，實現資料與邏輯分離的雲端原生設計。</span>
+                    </li>
+                    <li class="flex gap-3">
+                        <i data-lucide="check" class="w-5 h-5 text-indigo-500 shrink-0"></i>
+                        <span><strong>自動化部署</strong>：透過 Azure DevOps Pipeline 建立完整的 CI/CD 流程，自動部署至 IIS Server。</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-white mb-4 flex items-center gap-2">
+                    <i data-lucide="code-2" class="w-5 h-5 text-cyan-400"></i> 技術架構
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i data-lucide="bot" class="w-4 h-4 text-indigo-400"></i>
+                            <h4 class="font-semibold text-white">Azure OpenAI</h4>
+                        </div>
+                        <p class="text-sm text-slate-400">整合 GPT-4o 與 Embedding 模型，具備強大的語意理解與生成能力。</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i data-lucide="container" class="w-4 h-4 text-indigo-400"></i>
+                            <h4 class="font-semibold text-white">Docker 化部署</h4>
+                        </div>
+                        <p class="text-sm text-slate-400">容器化應用程式，確保開發與生產環境的一致性。</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i data-lucide="cloud" class="w-4 h-4 text-indigo-400"></i>
+                            <h4 class="font-semibold text-white">Azure Cloud</h4>
+                        </div>
+                        <p class="text-sm text-slate-400">深度整合 Azure 雲端服務，包含 App Service、Storage Acount、Ai Search 與 DevOps。</p>
+                    </div>
+                    <div class="bg-slate-800/50 p-4 rounded-xl border border-slate-700/50 hover:border-indigo-500/30 transition">
+                        <div class="flex items-center gap-2 mb-2">
+                            <i data-lucide="terminal" class="w-4 h-4 text-indigo-400"></i>
+                            <h4 class="font-semibold text-white">Flask Backend</h4>
+                        </div>
+                        <p class="text-sm text-slate-400">使用輕量級 Python Web 框架，提供高效的 API 服務。</p>
+                    </div>
+                </div>
+            </div>
+        `,
+        "video": "assets/projects/bpm-knowledge/demo.mp4",
+        "images": [],
+        "tags": ["Python", "RAG", "Azure OpenAI", "Azure DevOps", "Docker"],
+        "links": {
+            "github": "",
+            "demo": ""
+        }
+    },
     "aiwave": {
         "title": "AIWave",
         "subtitle": "🏆 台灣生成式 AI 應用黑客松",
