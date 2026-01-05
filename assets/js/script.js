@@ -89,35 +89,35 @@ function openModal(projectId) {
         <p class="text-lg text-slate-300 mb-6">${project.description}</p>
         
         ${project.video ? `
-        <div class="mb-6 rounded-xl overflow-hidden relative">
-            <div class="aspect-video bg-slate-900 relative">
-                <!-- Loading Indicator -->
-                <div id="videoLoader-${projectId}" class="video-loader">
-                    <div class="loader-content">
-                        <p class="loader-text">內容載入中</p>
-                        <div class="loader-dots">
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                            <div class="loader-dot"></div>
-                        </div>
-                        <p class="loader-subtext">請稍候片刻</p>
+        <div class="mb-6 rounded-xl overflow-hidden relative bg-slate-900">
+            <!-- Loading Indicator -->
+            <div id="videoLoader-${projectId}" class="video-loader">
+                <div class="loader-content">
+                    <p class="loader-text">內容載入中</p>
+                    <div class="loader-dots">
+                        <div class="loader-dot"></div>
+                        <div class="loader-dot"></div>
+                        <div class="loader-dot"></div>
                     </div>
+                    <p class="loader-subtext">請稍候片刻</p>
                 </div>
-                ${project.video.includes('youtube.com') || project.video.includes('youtu.be') || !project.video.includes('.') ? `
+            </div>
+            ${project.video.includes('youtube.com') || project.video.includes('youtu.be') || !project.video.includes('.') ? `
+                <div class="aspect-video relative">
                     <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${project.video}" 
                         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen class="rounded-xl" onload="document.getElementById('videoLoader-${projectId}').classList.add('hidden')"></iframe>
-                ` : `
-                    <video id="video-${projectId}" width="100%" height="100%" controls preload="metadata" 
-                        class="rounded-xl" 
-                        poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect fill='%231e293b' width='800' height='450'/%3E%3C/svg%3E"
-                        onloadedmetadata="document.getElementById('videoLoader-${projectId}').classList.add('hidden')"
-                        oncanplay="document.getElementById('videoLoader-${projectId}').classList.add('hidden')">
-                        <source src="${project.video}">
-                        您的瀏覽器不支援影片播放。
-                    </video>
-                `}
-            </div>
+                        allowfullscreen class="absolute inset-0 w-full h-full" onload="document.getElementById('videoLoader-${projectId}').classList.add('hidden')"></iframe>
+                </div>
+            ` : `
+                <video id="video-${projectId}" width="100%" controls preload="metadata" 
+                    class="w-full h-auto block" 
+                    poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Crect fill='%231e293b' width='800' height='450'/%3E%3C/svg%3E"
+                    onloadedmetadata="document.getElementById('videoLoader-${projectId}').classList.add('hidden')"
+                    oncanplay="document.getElementById('videoLoader-${projectId}').classList.add('hidden')">
+                    <source src="${project.video}">
+                    您的瀏覽器不支援影片播放。
+                </video>
+            `}
         </div>
         ` : ''}
         
